@@ -8,7 +8,7 @@ aenum==3.1.15
     # via gremlinpython
 aiohappyeyeballs==2.4.3
     # via aiohttp
-aiohttp==3.10.10
+aiohttp==3.10.11
     # via
     #   -r requirements-dev.in
     #   gremlinpython
@@ -21,12 +21,12 @@ anyio==4.6.2.post1
     #   httpx
     #   starlette
     #   watchfiles
-appnope==0.1.4
-    # via ipykernel
 asttokens==2.4.1
     # via stack-data
 async-timeout==4.0.3
-    # via -r requirements-dev.in
+    # via
+    #   -r requirements-dev.in
+    #   gremlinpython
 attrs==24.2.0
     # via aiohttp
 black==24.10.0
@@ -93,8 +93,10 @@ frozenlist==1.4.1
     # via
     #   aiohttp
     #   aiosignal
-gremlinpython==3.7.2
-    # via -r requirements.in
+gremlinpython==3.7.3
+    # via
+    #   -r requirements.in
+    #   janusgraphpython
 h11==0.14.0
     # via
     #   httpcore
@@ -128,6 +130,8 @@ isodate==0.7.2
     # via gremlinpython
 itsdangerous==2.2.0
     # via flask
+janusgraphpython==1.1.0
+    # via -r requirements.in
 jedi==0.19.1
     # via ipython
 jinja2==3.1.4
@@ -200,9 +204,7 @@ platformdirs==4.3.6
     #   jupyter-core
     #   virtualenv
 plotly==5.24.1
-    # via
-    #   -r requirements.in
-    #   dash
+    # via dash
 pluggy==1.5.0
     # via pytest
 pre-commit==4.0.1
@@ -210,7 +212,9 @@ pre-commit==4.0.1
 prompt-toolkit==3.0.48
     # via ipython
 propcache==0.2.0
-    # via yarl
+    # via
+    #   aiohttp
+    #   yarl
 psutil==6.1.0
     # via ipykernel
 ptyprocess==0.7.0
@@ -243,7 +247,7 @@ python-dateutil==2.9.0.post0
     #   matplotlib
 python-dotenv==1.0.1
     # via uvicorn
-python-multipart==0.0.12
+python-multipart==0.0.18
     # via fastapi
 pyyaml==6.0.2
     # via
