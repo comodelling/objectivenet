@@ -44,6 +44,14 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#database-configuration">Database configuration</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#backend-api">Backend API</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#development">Development</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contributing">Contributing</a>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -78,18 +86,43 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="welcome-to-objectivenet-documentation">Welcome to ObjectiveNet Documentation</h1>
-<p><em>ObjectiveNet</em> is a free software for modelling possible changes as nodes in a causal network.<br>
-It is in development, and its current state may differ from this documentation.</p>
+<p><em>ObjectiveNet</em> is a free software for modelling possible changes as nodes in a causal graph.
+ It aims to foster open, inclusive, collaborative and objective-based decision-making processes.<br></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>ObjectiveNet is in alpha development, and its current state may differ from this documentation.</p>
+</div>
 <h2 id="getting-started">Getting started</h2>
 <p>To start ObjectiveNet:</p>
 <ul>
 <li><a href="https://www.docker.com/get-started/">install Docker engine</a> if not already on your machine,</li>
-<li>clone the repo, e.g. with <code>git clone https://github.com/planningcommons/objectivenet.git</code>,</li>
+<li>clone the repo, e.g. with <code>git clone https://github.com/comodelling/objectivenet.git</code>,</li>
 <li>run <code>bash start_docker.sh</code> from the cloned <code>objectivenet/</code> directory,</li>
 <li>wait for it to start...and that's it! You can access it at <a href="http://localhost:5173/">http://localhost:5173/</a> from a browser.</li>
 </ul>
-<p>You will be able to create possible changes, relate them together, visualise them, and search for them through the web interface. 
-Changes are interconnected as part of a <a href="graph/">causal graph</a>, and their <a href="democracy/">support level</a> may be measured. </p>
+<p>You will be able to create possible changes, relate them together, visualise them, and search for them through the web interface.
+Changes are interconnected as part of a <a href="graph/">causal graph</a>, and their <a href="democracy/">support level</a> may be measured through support ratings.</p>
+<h2 id="database-configuration">Database configuration</h2>
+<p>You can choose between different types of databases to store the underlying graph by modifying the value of <code>DB_TYPE</code> inside <code>backend/.env</code> configuration file.
+Currently supported database types are: <code>janusgraph</code>, <code>sqlite</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>there is no synchronisation between those different databases, and switching between them will not import the content of the other. For this, you will need to export and import the content using the <code>network</code> API.</p>
+</div>
+<h2 id="backend-api">Backend API</h2>
+<p>ObjectiveNet's graph database can also be queried directly using its backend API framework.
+You can find its API schema at: <a href="http://localhost:8000/docs">http://localhost:8000/docs</a> (generated automatically using Swagger).</p>
+<h2 id="development">Development</h2>
+<p>This project uses:
+- <a href="https://fastapi.tiangolo.com/">FastAPI</a> framework and a <a href="https://janusgraph.org/">JanusGraph</a> graph database on the backend (or relational alternatives such as <a href="https://www.sqlite.org">SQlite</a>),
+- <a href="https://vuejs.org/">Vue.js</a>, <a href="https://vite.dev/">Vite</a>, and <a href="https://vueflow.dev/">Vue Flow</a> on the frontend.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Looking to file a bug report or a feature request? https://github.com/comodelling/objectivenet/issues</p>
+<p>You can also contribute to ObjectiveNet by:</p>
+<ul>
+<li>experimenting with the software and directly <a href="mailto:mario.morvan@ucl.ac.uk">sending feedback via email</a>,</li>
+<li>creating <strong>feature/</strong> or <strong>fix/</strong>  branches and opening <a href="https://github.com/comodelling/objectivenet/pulls">pull requests</a>.</li>
+</ul>
               
             </div>
           </div><footer>
@@ -138,5 +171,5 @@ Changes are interconnected as part of a <a href="graph/">causal graph</a>, and t
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-01-31 18:54:58.664373+00:00
+Build Date UTC : 2025-01-31 19:30:53.900522+00:00
 -->
