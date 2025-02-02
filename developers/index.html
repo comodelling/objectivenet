@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Democratic Support - ObjectiveNet Documentation</title>
+    <title>Developers - ObjectiveNet Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Democratic Support";
-        var mkdocs_page_input_path = "democracy.md";
+        var mkdocs_page_name = "Developers";
+        var mkdocs_page_input_path = "developers.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -43,19 +43,25 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Introduction</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../developers/">Developers</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Developers</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#database-configuration">Database configuration</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#backend-api">Backend API</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#development">Development</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contributing">Contributing</a>
+    </li>
+    </ul>
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Modelling</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../graph/">Causal Graph</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Democratic Support</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#support-ratings">Support ratings</a>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../democracy/">Democratic Support</a>
                   </li>
               </ul>
       </div>
@@ -72,8 +78,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Modelling</li>
-      <li class="breadcrumb-item active">Democratic Support</li>
+      <li class="breadcrumb-item active">Developers</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -82,16 +87,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="democratic-modelling">Democratic Modelling</h1>
-<h2 id="support-ratings">Support ratings</h2>
-<p>Users are encouraged to voice their level of support for each potential change, through rating given nodes along a Likert scale of <strong>1</strong> (strongly disagree) to <strong>5</strong> (strongly agree).
-Note that these ratings will be anonymous on the UI, and pseudo-anonymised in the database.
-Further down the line, these ratings will then be used to estimate and debias an overall measure of support within every node's scope.</p>
+                <h1 id="developers">Developers</h1>
+<h2 id="database-configuration">Database configuration</h2>
+<p>You can choose between different types of databases to store the underlying graph by modifying the value of <code>DB_TYPE</code> inside <code>backend/.env</code> configuration file.
+Currently supported database types are: <code>janusgraph</code>, <code>sqlite</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>there is no synchronisation between those different databases, and switching between them will not import the content of the other. For this, you will need to export and import the content using the <code>network</code> API.</p>
+</div>
+<h2 id="backend-api">Backend API</h2>
+<p>ObjectiveNet's graph database can also be queried directly using its backend API framework.
+You can find its API schema at: <a href="http://localhost:8000/docs">http://localhost:8000/docs</a> (generated automatically using Swagger).</p>
+<h2 id="development">Development</h2>
+<p>This project uses:
+- <a href="https://fastapi.tiangolo.com/">FastAPI</a> framework and a <a href="https://janusgraph.org/">JanusGraph</a> graph database on the backend (or relational alternatives such as <a href="https://www.sqlite.org">SQlite</a>),
+- <a href="https://vuejs.org/">Vue.js</a>, <a href="https://vite.dev/">Vite</a>, and <a href="https://vueflow.dev/">Vue Flow</a> on the frontend.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Looking to file a bug report or a feature request? https://github.com/comodelling/objectivenet/issues</p>
+<p>You can also contribute to ObjectiveNet by:</p>
+<ul>
+<li>experimenting with the software and directly <a href="mailto:mario.morvan@ucl.ac.uk">sending feedback via email</a>,</li>
+<li>creating <strong>feature/</strong> or <strong>fix/</strong>  branches and opening <a href="https://github.com/comodelling/objectivenet/pulls">pull requests</a>.</li>
+</ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../graph/" class="btn btn-neutral float-left" title="Causal Graph"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral float-left" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../graph/" class="btn btn-neutral float-right" title="Causal Graph">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -114,8 +137,10 @@ Further down the line, these ratings will then be used to estimate and debias an
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../graph/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../graph/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
