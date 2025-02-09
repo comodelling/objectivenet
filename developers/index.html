@@ -89,21 +89,22 @@
               
                 <h1 id="developers">Developers</h1>
 <h2 id="database-configuration">Database configuration</h2>
-<p>You can choose between different types of databases to store the underlying graph by modifying the value of <code>DB_TYPE</code> inside <code>backend/.env</code> configuration file.
-Currently supported database types are: <code>janusgraph</code>, <code>sqlite</code>.</p>
+<p>By default, the app can run simply using a postgresql relational database.
+However, you can also enable a janusgraph graph database on top of the relational database to speed up some queries.
+To do so, just set <code>ENABLE_GRAPH_DB</code> to <code>true</code> in <code>backend/.env</code> configuration file.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>there is no synchronisation between those different databases, and switching between them will not import the content of the other. For this, you will need to export and import the content using the <code>network</code> API.</p>
+<p>switching between graph database enabled or not might lead to inconsistencies.</p>
 </div>
 <h2 id="backend-api">Backend API</h2>
 <p>ObjectiveNet's graph database can also be queried directly using its backend API framework.
 You can find its API schema at: <a href="http://localhost:8000/docs">http://localhost:8000/docs</a> (generated automatically using Swagger).</p>
 <h2 id="development">Development</h2>
 <p>This project uses:
-- <a href="https://fastapi.tiangolo.com/">FastAPI</a> framework and a <a href="https://janusgraph.org/">JanusGraph</a> graph database on the backend (or relational alternatives such as <a href="https://www.sqlite.org">SQlite</a>),
+- <a href="https://fastapi.tiangolo.com/">FastAPI</a> framework, <a href="https://janusgraph.org/">JanusGraph</a> graph and  <a href="https://www.postgresql.org/">PostgreSQL</a> relational databases on the backend,
 - <a href="https://vuejs.org/">Vue.js</a>, <a href="https://vite.dev/">Vite</a>, and <a href="https://vueflow.dev/">Vue Flow</a> on the frontend.</p>
 <h2 id="contributing">Contributing</h2>
-<p>Looking to file a bug report or a feature request? https://github.com/comodelling/objectivenet/issues</p>
+<p>Looking to file a bug report or a feature request? <a href="https://github.com/comodelling/objectivenet/">https://github.com/comodelling/objectivenet/issues</a></p>
 <p>You can also contribute to ObjectiveNet by:</p>
 <ul>
 <li>experimenting with the software and directly <a href="mailto:mario.morvan@ucl.ac.uk">sending feedback via email</a>,</li>
