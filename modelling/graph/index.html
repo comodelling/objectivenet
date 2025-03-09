@@ -4,21 +4,21 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Causal Graph - ObjectiveNet Documentation</title>
-    <link rel="stylesheet" href="../css/theme.css" />
-    <link rel="stylesheet" href="../css/theme_extra.css" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Graph of Change - ObjectiveNet Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Causal Graph";
-        var mkdocs_page_input_path = "graph.md";
+        var mkdocs_page_name = "Graph of Change";
+        var mkdocs_page_input_path = "modelling/graph.md";
         var mkdocs_page_url = null;
       </script>
     
     <!--[if lt IE 9]>
-      <script src="../js/html5shiv.min.js"></script>
+      <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
       <script>hljs.highlightAll();</script> 
@@ -30,9 +30,9 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> ObjectiveNet Documentation
+          <a href="../.." class="icon icon-home"> ObjectiveNet Documentation
         </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
@@ -40,16 +40,16 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">Introduction</a>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../developers/">Developers</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../configuration/">Configuration</a>
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Modelling</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Causal Graph</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Graph of Change</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#nodes">Nodes</a>
     </li>
@@ -57,7 +57,16 @@
     </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../democracy/">Democratic Support</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../support/">Democratic Support</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Views</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../view/browsing/">Browsing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../view/focus/">Focus</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../view/user/">User's</a>
                   </li>
               </ul>
       </div>
@@ -67,15 +76,15 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="..">ObjectiveNet Documentation</a>
+          <a href="../..">ObjectiveNet Documentation</a>
         
       </nav>
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Modelling</li>
-      <li class="breadcrumb-item active">Causal Graph</li>
+      <li class="breadcrumb-item active">Graph of Change</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -84,14 +93,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="causal-graph">Causal Graph</h1>
+                <h1 id="graph-of-change">Graph of Change</h1>
 <p>In ObjectiveNet, possible changes are modelled as <strong>nodes</strong> in a <strong>graph</strong>, which may be connected together by <strong>edges</strong>.</p>
 <h2 id="nodes">Nodes</h2>
 <p>Nodes are the main entities in a graph. They are conceived as <em>possible changes</em> for the purpose of ObjectiveNet.
 One can create or edit a node via the node info pane.</p>
 <p>Every node must have the following attributes:</p>
 <ul>
-<li><strong>type</strong>, e.g., <em>objectives</em><em>, </em>actions<em><em>, and </em>potentialities</em></li>
+<li><strong>type</strong>, among <em>objective</em><em> (i.e. goal, purpose), </em>action<em><em>, and </em>potentiality</em> (i.e. possibility, externality)</li>
 <li><strong>title</strong>, to contain a short, one-line summary of the possible change</li>
 <li><strong>scope</strong>, which indicates where/to whom the change should apply</li>
 </ul>
@@ -101,7 +110,7 @@ One can create or edit a node via the node info pane.</p>
 <li>a list of <strong>tags</strong>,</li>
 <li>a list of <strong>references</strong>,</li>
 <li>a longer <strong>description</strong>,</li>
-<li>a measure of the <a href="../democracy/#support-ratings"><strong>support level</strong></a></li>
+<li>a measure of the <a href="modelling_support.md#support-ratings"><strong>support level</strong></a></li>
 </ul>
 <h2 id="edges">Edges</h2>
 <p>Edges connect two nodes together, representing a <em>causal relation</em> in a loose way, in which one node would be <em>enabling/causing/implying</em> another.</p>
@@ -115,8 +124,8 @@ One can create or edit a node via the node info pane.</p>
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../developers/" class="btn btn-neutral float-left" title="Developers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../democracy/" class="btn btn-neutral float-right" title="Democratic Support">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../configuration/" class="btn btn-neutral float-left" title="Configuration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../support/" class="btn btn-neutral float-right" title="Democratic Support">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -139,18 +148,18 @@ One can create or edit a node via the node info pane.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../developers/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../configuration/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../democracy/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../support/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "..";</script>
-    <script src="../js/theme_extra.js"></script>
-    <script src="../js/theme.js"></script>
-      <script src="../search/main.js"></script>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);

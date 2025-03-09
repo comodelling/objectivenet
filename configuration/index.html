@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Developers - ObjectiveNet Documentation</title>
+    <title>Configuration - ObjectiveNet Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Developers";
-        var mkdocs_page_input_path = "developers.md";
+        var mkdocs_page_name = "Configuration";
+        var mkdocs_page_input_path = "configuration.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -44,24 +44,29 @@
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">Developers</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Configuration</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#database-configuration">Database configuration</a>
+    <li class="toctree-l2"><a class="reference internal" href="#graph-database">Graph database</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#backend-api">Backend API</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#development">Development</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#contributing">Contributing</a>
+    <li class="toctree-l2"><a class="reference internal" href="#random-quotes">Random quotes</a>
     </li>
     </ul>
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Modelling</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../graph/">Causal Graph</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../modelling/graph/">Graph of Change</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../democracy/">Democratic Support</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../modelling/support/">Democratic Support</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Views</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../view/browsing/">Browsing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../view/focus/">Focus</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../view/user/">User's</a>
                   </li>
               </ul>
       </div>
@@ -78,7 +83,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Developers</li>
+      <li class="breadcrumb-item active">Configuration</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -87,35 +92,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="developers">Developers</h1>
-<h2 id="database-configuration">Database configuration</h2>
+                <h1 id="configuration">Configuration</h1>
+<p>Here we go through the different configuration options offered when deploying an instance of ObjectiveNet.
+For user-related settings, see the <a href="view_user.md">user's views</a> .</p>
+<h2 id="graph-database">Graph database</h2>
 <p>By default, the app can run simply using a postgresql relational database.
-However, you can also enable a janusgraph graph database on top of the relational database to speed up some queries.
+However, you can also enable a janusgraph graph database on top of the relational database to speed up graph-related queries.
 To do so, just set <code>ENABLE_GRAPH_DB</code> to <code>true</code> in <code>backend/.env</code> configuration file.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>switching between graph database enabled or not might lead to inconsistencies.</p>
+<p>Switching between graph database enabled or not might lead to inconsistencies.</p>
 </div>
-<h2 id="backend-api">Backend API</h2>
-<p>ObjectiveNet's graph database can also be queried directly using its backend API framework.
-You can find its API schema at: <a href="http://localhost:8000/docs">http://localhost:8000/docs</a> (generated automatically using Swagger).</p>
-<h2 id="development">Development</h2>
-<p>This project uses:
-- <a href="https://fastapi.tiangolo.com/">FastAPI</a> framework, <a href="https://janusgraph.org/">JanusGraph</a> graph and  <a href="https://www.postgresql.org/">PostgreSQL</a> relational databases on the backend,
-- <a href="https://vuejs.org/">Vue.js</a>, <a href="https://vite.dev/">Vite</a>, and <a href="https://vueflow.dev/">Vue Flow</a> on the frontend.</p>
-<h2 id="contributing">Contributing</h2>
-<p>Looking to file a bug report or a feature request? <a href="https://github.com/comodelling/objectivenet/">https://github.com/comodelling/objectivenet/issues</a></p>
-<p>You can also contribute to ObjectiveNet by:</p>
-<ul>
-<li>experimenting with the software and directly <a href="mailto:mario.morvan@ucl.ac.uk">sending feedback via email</a>,</li>
-<li>creating <strong>feature/</strong> or <strong>fix/</strong>  branches and opening <a href="https://github.com/comodelling/objectivenet/pulls">pull requests</a>.</li>
-</ul>
+<h2 id="random-quotes">Random quotes</h2>
+<p>For randomly selecting and displaying quotes on the landing page, you can specify the path to JSON file of quotes in <code>backend/.env</code>.
+For instance: <code>QUOTES_FILE=path_to_your_quotes_file.json</code>.
+The JSON file should be formatted with a quote, author, and optional "where" field, e.g.:</p>
+<pre><code class="language-json">{
+    &quot;quote&quot;: &quot;Learning is an incremental, self-transforming process.&quot;,
+    &quot;author&quot;: &quot;Elinor Ostrom&quot;,
+    &quot;where&quot;: &quot;Governing the Commons&quot;,
+}
+</code></pre>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href=".." class="btn btn-neutral float-left" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../graph/" class="btn btn-neutral float-right" title="Causal Graph">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../modelling/graph/" class="btn btn-neutral float-right" title="Graph of Change">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -141,7 +144,7 @@ You can find its API schema at: <a href="http://localhost:8000/docs">http://loca
       <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../graph/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../modelling/graph/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
