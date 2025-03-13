@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Democratic Support - ObjectiveNet Documentation</title>
+    <title>Democratic Inputs - ObjectiveNet Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Democratic Support";
-        var mkdocs_page_input_path = "modelling/support.md";
+        var mkdocs_page_name = "Democratic Inputs";
+        var mkdocs_page_input_path = "modelling/demos.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -47,17 +47,6 @@
                 <li class="toctree-l1"><a class="reference internal" href="../../configuration/">Configuration</a>
                 </li>
               </ul>
-              <p class="caption"><span class="caption-text">Modelling</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../graph/">Graph of Change</a>
-                  </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Democratic Support</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#support-ratings">Support ratings</a>
-    </li>
-    </ul>
-                  </li>
-              </ul>
               <p class="caption"><span class="caption-text">Views</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../view/browsing/">Browsing</a>
@@ -65,6 +54,21 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../view/focus/">Focus</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../view/user/">User's</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Modelling</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../graph/">Graph of Change</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Democratic Inputs</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#support-ratings">Support ratings</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#causal-ratings">Causal ratings</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aggregating-and-debiasing">Aggregating and debiasing</a>
+    </li>
+    </ul>
                   </li>
               </ul>
       </div>
@@ -82,7 +86,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Modelling</li>
-      <li class="breadcrumb-item active">Democratic Support</li>
+      <li class="breadcrumb-item active">Democratic Inputs</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -93,15 +97,20 @@
               
                 <h1 id="democratic-modelling">Democratic Modelling</h1>
 <h2 id="support-ratings">Support ratings</h2>
-<p>Users are encouraged to voice their level of support for each potential change, through rating given nodes along a Likert scale of <strong>1</strong> (strongly disagree) to <strong>5</strong> (strongly agree).
-Note that these ratings will be anonymous on the UI, and pseudo-anonymised in the database.
-Further down the line, these ratings will then be used to estimate and debias an overall measure of support within every node's scope.</p>
+<p>Users are encouraged to voice their level of support for each potential change, responding to the question <em>"How much do you support this change?"</em> for each node they select.
+Ratings follow a Likert scale from <strong>1</strong> (not at all) to <strong>5</strong> (strongly).
+Note that these ratings will are anonymised on the UI, and pseudo-anonymised in the database.</p>
+<h2 id="causal-ratings">Causal ratings</h2>
+<p>Users are also asked, for each edge they select: <em>"To what extent does C[ondition] contribute to O[utcome]?"</em>.
+This causal strength is meant to be general, encompassing several causal mechanisms: enabling, causing, influencing, implying.</p>
+<h2 id="aggregating-and-debiasing">Aggregating and debiasing</h2>
+<p>Ratings are currently aggregated according to their median (e.g., on the <a href="../../view/browsing/">browsing view</a> or to select a colour on the <a href="../../view/focus/#flow-pane">flow pane</a>)
+Further down the line, the overall measure of support will be debiased within every node's scope.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../graph/" class="btn btn-neutral float-left" title="Graph of Change"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../view/browsing/" class="btn btn-neutral float-right" title="Browsing">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -126,8 +135,6 @@ Further down the line, these ratings will then be used to estimate and debias an
     
       <span><a href="../graph/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../../view/browsing/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
